@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 from src.exception import CustomException
 import dill
+from numpy import sqrt
+from sklearn.metrics import mean_squared_error
 
 def save_object(filepath,obj):
     try:
@@ -18,7 +20,26 @@ def save_object(filepath,obj):
         raise CustomException(e, sys)
     
 def evaluate_models(X_train, y_train, X_test, y_test, models):
+    
     try:
-        pass
+        report = {}
+        
+        for i in range(len(list(models))):
+            model = list(models.values())[i]
+            
+            model.fit(X_train, y_train)
+            
+            y_train_pred = model.predict(X_train)
+            
+            y_test_pred = model.predict(X_test)
+            
+            train_model_score = sqrt(mean_squared_error(y_train, y_train_pred))
+            
+            test_model_score = sqrt(mean_squared_error(y_test, y_test_pred))
+            
+            report[list(models.keys())[i]] = test_model_score
+        
+        return report
+        
     except Exception as e:
         raise CustomException(e, sys)
