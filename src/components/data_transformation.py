@@ -22,7 +22,8 @@ class DataTransformation:
         
     def get_data_transformer_obj(self):
         
-        """This function is responsable for data transformation
+        """
+        This function is responsable for data transformation
 
         Raises:
             CustomException: Returns the error message details
@@ -32,7 +33,15 @@ class DataTransformation:
         """
         
         try:
-            numerical_features = [] #Complete with all the columns of the dataframe
+            
+            numerical_features = ['Fat', 'Saturated Fats',
+       'Monounsaturated Fats', 'Polyunsaturated Fats', 'Carbohydrates',
+       'Sugars', 'Protein', 'Dietary Fiber', 'Cholesterol', 'Sodium', 'Water',
+       'Vitamin A', 'Vitamin B1', 'Vitamin B11', 'Vitamin B12', 'Vitamin B2',
+       'Vitamin B3', 'Vitamin B5', 'Vitamin B6', 'Vitamin C', 'Vitamin D',
+       'Vitamin E', 'Vitamin K', 'Calcium', 'Copper', 'Iron', 'Magnesium',
+       'Manganese', 'Phosphorus', 'Potassium', 'Selenium', 'Zinc',
+       'Nutrition Density']
             # categorical_features=[]
             
             num_pipeline= Pipeline(
@@ -74,6 +83,7 @@ class DataTransformation:
         
     
     def initiate_data_transformation(self, train_path,test_path):
+        
         try:
             train_df = pd.read_csv(train_path)
             test_df = pd.read_csv(test_path)
@@ -84,9 +94,21 @@ class DataTransformation:
             
             preprocessing_obj = self.get_data_transformer_obj()
             
-            target_column_name = "Calories" #Double check
+            target_column_name = 'Caloric Value'
             
-            numerical_features = [] #Complete with all the columns of the dataframe
+            #I need to add a function in utils in order to drop columns data.drop(columns=['Unnamed: 0.1', 'Unnamed: 0'], inplace=True)
+            
+            #columns_drop = ['Unnamed: 0.1', 'Unnamed: 0','food','Caloric Value']
+            
+            
+            numerical_features = ['Fat', 'Saturated Fats','Monounsaturated Fats', 
+                                  'Polyunsaturated Fats', 'Carbohydrates',
+                                  'Sugars', 'Protein', 'Dietary Fiber', 'Cholesterol', 
+                                  'Sodium', 'Water','Vitamin A', 'Vitamin B1', 'Vitamin B11', 
+                                  'Vitamin B12', 'Vitamin B2','Vitamin B3', 'Vitamin B5', 
+                                  'Vitamin B6', 'Vitamin C', 'Vitamin D','Vitamin E', 'Vitamin K', 
+                                  'Calcium', 'Copper', 'Iron', 'Magnesium','Manganese', 'Phosphorus', 
+                                  'Potassium', 'Selenium', 'Zinc','Nutrition Density']
             
             imput_features_train_df=train_df.drop(columns=[target_column_name], axis=1)
             target_features_train_df = train_df[target_column_name]
@@ -104,7 +126,7 @@ class DataTransformation:
             
             logging.info('Saved preprocessing object')
             
-            save_object(file_path = self.data_transformation_config.preprocessor_obj_file_path,
+            save_object(filepath = self.data_transformation_config.preprocessor_obj_file_path,
                            obj=preprocessing_obj)
             
             return(
