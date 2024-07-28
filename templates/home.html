@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caloric Value Predictor</title>
+    <title>Nutrition Density Predictor</title>
 </head>
 <body>
     <div class="login">
@@ -174,17 +174,17 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label">Amount of "Nutrition Density" present in the food</label>
-            <input class="form-control" type="number" name = "Nutrition Density" placeholder="Enter value" step="0.01" min="0" max="10000">
+            <label class="form-label">Amount of "Caloric Value" present in the food</label>
+            <input class="form-control" type="number" name = "Caloric Value" placeholder="Enter value" step="0.01" min="0" max="10000">
         </div>
 
         <div class="mb-3">
-            <input class="btn btn-primary" type="submit" value="Predict your Caloric Value" required />
+            <input class="btn btn-primary" type="submit" value="Predict your Nutrition Density" required />
         </div>
 
         </form>
      <h2>
-        The Caloric Value prediction for this food is {{results}}
+        The Nutrition Density prediction for this food is {{results}}
      </h2>  
 </body>
 </html>

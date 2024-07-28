@@ -41,7 +41,7 @@ class DataTransformation:
        'Vitamin B3', 'Vitamin B5', 'Vitamin B6', 'Vitamin C', 'Vitamin D',
        'Vitamin E', 'Vitamin K', 'Calcium', 'Copper', 'Iron', 'Magnesium',
        'Manganese', 'Phosphorus', 'Potassium', 'Selenium', 'Zinc',
-       'Nutrition Density']
+       'Caloric Value']
             # categorical_features=[]
             
             num_pipeline= Pipeline(
@@ -94,7 +94,7 @@ class DataTransformation:
             
             preprocessing_obj = self.get_data_transformer_obj()
             
-            target_column_name = 'Caloric Value'
+            target_column_name = 'Nutrition Density'
             
             #I need to add a function in utils in order to drop columns data.drop(columns=['Unnamed: 0.1', 'Unnamed: 0'], inplace=True)
             
@@ -108,7 +108,7 @@ class DataTransformation:
                                   'Vitamin B12', 'Vitamin B2','Vitamin B3', 'Vitamin B5', 
                                   'Vitamin B6', 'Vitamin C', 'Vitamin D','Vitamin E', 'Vitamin K', 
                                   'Calcium', 'Copper', 'Iron', 'Magnesium','Manganese', 'Phosphorus', 
-                                  'Potassium', 'Selenium', 'Zinc','Nutrition Density']
+                                  'Potassium', 'Selenium', 'Zinc','Caloric Value']
             
             imput_features_train_df=train_df.drop(columns=[target_column_name], axis=1)
             target_features_train_df = train_df[target_column_name]

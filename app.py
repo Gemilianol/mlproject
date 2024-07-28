@@ -5,6 +5,9 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 
+# Note: In order to see the app in the browser, after run python app.py on consol 
+# you have to type as url: http://127.0.0.1:5000
+
 application = Flask(__name__)
 
 app = application
@@ -58,7 +61,7 @@ def predict_datapoint():
             Potassium=float(request.form.get('Potassium')),
             Selenium=float(request.form.get('Selenium')),
             Zinc=float(request.form.get('Zinc')),
-            ND=float(request.form.get('Nutrition Density'))
+            cv=float(request.form.get('Caloric Value'))
         )
         
         pred_df = data.get_data_as_data_frame()
@@ -67,7 +70,7 @@ def predict_datapoint():
         predict_pipeline=PredictPipeline()
         results = predict_pipeline.predict(pred_df)
         
-        return render_template('home.html', results=results[0]) #return a list
+        return render_template('home.html', results = np.round(results[0])) #return a list
     
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

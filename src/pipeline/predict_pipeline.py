@@ -29,7 +29,7 @@ class CustomData:
                  VA: float, VB1: float,VB2: float,VB3: float,VB5: float,VB6: float,
                  VB11: float, VB12: float,VC: float, VD: float, VE: float,VK: float,
                  Calcium: float, Copper: float, Iron: float, Magnesium: float,Manganese: float,
-                 Phosphorus: float, Potassium: float, Selenium: float, Zinc: float,ND: float): 
+                 Phosphorus: float, Potassium: float, Selenium: float, Zinc: float, cv: float): 
         
         self.fats = Fats
         self.sfats = SFats
@@ -63,7 +63,7 @@ class CustomData:
         self.po = Potassium
         self.sel = Selenium
         self.zinc = Zinc
-        self.nd = ND
+        self.cv = cv
         
     def get_data_as_data_frame(self):
         try:
@@ -100,7 +100,7 @@ class CustomData:
                 'Potassium': [self.po],
                 'Selenium': [self.sel],
                 'Zinc': [self.zinc],
-                'Nutrition Density': [self.nd]
+                'Caloric Value': [self.cv]
             }
             
             return pd.DataFrame(custom_data_input_dict)
