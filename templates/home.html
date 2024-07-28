@@ -3,9 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Caloric Value Predictor</title>
 </head>
 <body>
+    <div class="login">
     
+        <form action="{{ url_for('predict_datapoint')}}" method="post">
+         <h1>
+             <legend>Caloric Value Prediction</legend>
+         </h1>
+
+         <div class="mb-3">
+             <label class="form-label">Amount of "Fats" present in the food</label>
+             <input class="form-control" type="number" name = Fat placeholder="Enter value" step="0.01" min="0" max="10000">
+         </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Saturated Fats" present in the food</label>
+            <input class="form-control" type="number" name = "Saturated Fats" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Monounsaturated Fats" present in the food</label>
+            <input class="form-control" type="number" name = "Monounsaturated Fats" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Polyunsaturated Fats" present in the food</label>
+            <input class="form-control" type="number" name = "Polyunsaturated Fats" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Carbohydrates" present in the food</label>
+            <input class="form-control" type="number" name = Carbohydrates placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Sugars" present in the food</label>
+            <input class="form-control" type="number" name = Sugars placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Protein" present in the food</label>
+            <input class="form-control" type="number" name = Protein placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Dietary Fiber" present in the food</label>
+            <input class="form-control" type="number" name = "Dietary Fiber" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Cholesterol" present in the food</label>
+            <input class="form-control" type="number" name = Cholesterol placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Sodium" present in the food</label>
+            <input class="form-control" type="number" name = Sodium placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Water" present in the food</label>
+            <input class="form-control" type="number" name = Water placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Vitamin A" present in the food</label>
+            <input class="form-control" type="number" name = "Vitamin A" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">Amount of "Vitamin B1" present in the food</label>
+            <input class="form-control" type="number" name = "Vitamin B1" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Vitamin B2" present in the food</label>
+            <input class="form-control" type="number" name = "Vitamin B2" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Vitamin B3" present in the food</label>
+            <input class="form-control" type="number" name = "Vitamin B3" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Vitamin B5" present in the food</label>
+            <input class="form-control" type="number" name = "Vitamin B5" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Vitamin B6" present in the food</label>
+            <input class="form-control" type="number" name = "Vitamin B6" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Vitamin B11" present in the food</label>
+            <input class="form-control" type="number" name = "Vitamin B11" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Vitamin B12" present in the food</label>
+            <input class="form-control" type="number" name = "Vitamin B12" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Vitamin C" present in the food</label>
+            <input class="form-control" type="number" name = "Vitamin C" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Vitamin D" present in the food</label>
+            <input class="form-control" type="number" name = "Vitamin D" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Vitamin E" present in the food</label>
+            <input class="form-control" type="number" name = "Vitamin E" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Vitamin K" present in the food</label>
+            <input class="form-control" type="number" name = "Vitamin K" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Calcium" present in the food</label>
+            <input class="form-control" type="number" name = Calcium placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Copper" present in the food</label>
+            <input class="form-control" type="number" name = Copper placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Iron" present in the food</label>
+            <input class="form-control" type="number" name = Iron placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Magnesium" present in the food</label>
+            <input class="form-control" type="number" name = Magnesium placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Manganese" present in the food</label>
+            <input class="form-control" type="number" name = Manganese placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Phosphorus" present in the food</label>
+            <input class="form-control" type="number" name = Phosphorus placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Potassium" present in the food</label>
+            <input class="form-control" type="number" name = Potassium placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Selenium" present in the food</label>
+            <input class="form-control" type="number" name = Selenium placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Zinc" present in the food</label>
+            <input class="form-control" type="number" name = Zinc placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Amount of "Nutrition Density" present in the food</label>
+            <input class="form-control" type="number" name = "Nutrition Density" placeholder="Enter value" step="0.01" min="0" max="10000">
+        </div>
+
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict your Caloric Value" required />
+        </div>
+
+        </form>
+     <h2>
+        The Caloric Value prediction for this food is {{results}}
+     </h2>  
 </body>
 </html>

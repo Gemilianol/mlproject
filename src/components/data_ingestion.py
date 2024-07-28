@@ -10,6 +10,9 @@ from src.components.data_transformation import DataTransformation, DataTransform
 
 from src.components.model_trainer import ModelTrainerConfig, ModelTrainer
 
+import warnings
+warnings.filterwarnings('ignore')
+
 @dataclass
 class DataIngestionConfig:
     raw_data_path: str=os.path.join('artifacts','raw_data.csv')

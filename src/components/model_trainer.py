@@ -7,8 +7,8 @@ from src.exception import CustomException
 from src.logger import logging
 from src.utils import save_object, evaluate_models
 
-import warnings
-warnings.filterwarnings('ignore')
+# import warnings
+# warnings.filterwarnings('ignore')
 
 #from catboost import CatBoostRegressor
 
