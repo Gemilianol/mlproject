@@ -3,11 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Food Nutrition Density Predictor</title>
+    <style>
+        /* "Palette colors used: #e0e1dd - #778da9 - #415a77 - #1b263b - #0d1b2a" */
+        html {
+            background-color: #e0e1dd;
+        }
+
+        h1 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            color: #0d1b2a;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-family: Kanit;
+            font-size: 1.5rem;
+            color: #1b263b;
+            font-weight: lighter;
+            text-align: justify;
+        }
+
+        p {
+            font-family: Montserrat;
+            font-style: italic;
+            color: #415a77;
+            text-align: justify;
+        }
+
+        a {
+            font-family: Montserrat;
+            font-weight: bold;
+        }
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Welcome to the home page</h1>
-    <h2>This app is useful for predict Nutrition Density based on the data which you provided</h2>
-    <h3>If you want to try it, please add to the url /predictdata</h3>
+    <h2>This app is useful for predict "Food Nutrition Density" based on the data which you provided.</h2>
+    <p>Basically, it's a Machine Learning Algoritm trained with the <a href="https://www.kaggle.com/datasets/utsavdey1410/food-nutrition-dataset">Food Nutrition Dataset</a> downloaded from Kaggle.</p>
+    <p>According to this <a href="https://www.sciencedirect.com/science/article/abs/pii/B9780123918826000017">article</a>
+    "the concept of nutrient density is virtually the opposite of empty calories". </p>
+    <p>Also said that, "a nutrient-dense food is rich in nutrients compared to a calorie-dense food that is higher in calories."</p>
+    <p>"It is best to consume more nutrient-dense foods most of the time."</p>
+<a href="http://127.0.0.1:5000/predictdata">Try it!</a>
+
 </body>
 </html>
